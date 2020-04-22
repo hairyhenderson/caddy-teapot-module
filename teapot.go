@@ -3,7 +3,7 @@
 //
 // The simplest use could be in a Caddyfile like:
 //
-//    *:80
+//    localhost
 //
 //    route {
 //        teapot
@@ -12,8 +12,6 @@
 package teapot
 
 import (
-	"fmt"
-	"log"
 	"net/http"
 
 	"github.com/caddyserver/caddy/v2"
@@ -23,9 +21,7 @@ import (
 )
 
 func init() {
-	if err := caddy.RegisterModule(Teapot{}); err != nil {
-		log.Fatal(fmt.Errorf("teapot: failed to register module: %w", err))
-	}
+	caddy.RegisterModule(Teapot{})
 	httpcaddyfile.RegisterHandlerDirective("teapot", parseCaddyfile)
 }
 
@@ -56,6 +52,7 @@ func parseCaddyfile(h httpcaddyfile.Helper) (caddyhttp.MiddlewareHandler, error)
 
 func (s Teapot) ServeHTTP(w http.ResponseWriter, r *http.Request, _ caddyhttp.Handler) error {
 	w.WriteHeader(http.StatusTeapot)
+	w.Write([]byte("I'm a teapot\r\n"))
 
 	return nil
 }

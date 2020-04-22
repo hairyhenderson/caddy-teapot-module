@@ -7,7 +7,7 @@ to every request.
 The simplest use could be in a Caddyfile like:
 
 ```
-*:80
+localhost
 
 route {
     teapot
@@ -17,10 +17,12 @@ route {
 Then, when using a Caddy server with this module enabled:
 
 ```console
-$ curl -I localhost/any/path
+$ curl -I --http1.1 localhost/any/path
 HTTP/1.1 418 I'm a teapot
 Server: Caddy
 Date: Sun, 01 Mar 2020 15:48:23 GMT
 ```
+
+_(you could, of course use `curl --http2`, but the reason-phrase `I'm a teapot` won't display, and that's no fun!)_
 
 See also the [`example/`](./example) folder for an example of usage.

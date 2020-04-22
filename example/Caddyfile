@@ -1,4 +1,4 @@
-*:8080
+localhost
 
 route {
     teapot
