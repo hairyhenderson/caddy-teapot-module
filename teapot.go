@@ -43,18 +43,20 @@ func (s *Teapot) UnmarshalCaddyfile(d *caddyfile.Dispenser) error {
 
 func parseCaddyfile(h httpcaddyfile.Helper) (caddyhttp.MiddlewareHandler, error) {
 	t := new(Teapot)
+
 	err := t.UnmarshalCaddyfile(h.Dispenser)
 	if err != nil {
 		return nil, err
 	}
+
 	return t, nil
 }
 
 func (s Teapot) ServeHTTP(w http.ResponseWriter, r *http.Request, _ caddyhttp.Handler) error {
 	w.WriteHeader(http.StatusTeapot)
-	w.Write([]byte("I'm a teapot\r\n"))
+	_, err := w.Write([]byte("I'm a teapot\r\n"))
 
-	return nil
+	return err
 }
 
 // Interface guards
