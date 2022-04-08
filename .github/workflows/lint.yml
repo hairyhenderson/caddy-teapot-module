@@ -7,5 +7,5 @@ jobs:
     container:
       image: ghcr.io/hairyhenderson/gomplate-ci-build:latest
     steps:
-      - uses: actions/checkout@v2.4.0
+      - uses: actions/checkout@v3.0.0
       - run: golangci-lint run --verbose --max-same-issues=0 --max-issues-per-linter=0 --sort-results --out-format=github-actions
