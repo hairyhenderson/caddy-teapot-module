@@ -1,0 +1,24 @@
+name: Build
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    # only run on PRs targeting master
+    branches: [ master ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-20.04
+    container:
+      image: ghcr.io/hairyhenderson/gomplate-ci-build:latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: golangci-lint run --verbose --max-same-issues=0 --max-issues-per-linter=0 --sort-results --out-format=github-actions
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/hairyhenderson/gomplate-ci-build:latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: go build .
+      - run: cd example; go build .
