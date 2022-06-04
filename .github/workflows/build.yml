@@ -1,10 +1,10 @@
 name: Build
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    # only run on PRs targeting master
-    branches: [ master ]
+    # only run on PRs targeting main
+    branches: [ main ]
 
 jobs:
   lint:
