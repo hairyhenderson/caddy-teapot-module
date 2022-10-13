@@ -3,12 +3,11 @@
 //
 // The simplest use could be in a Caddyfile like:
 //
-//    localhost
+//	localhost
 //
-//    route {
-//        teapot
-//    }
-//
+//	route {
+//	    teapot
+//	}
 package teapot
 
 import (
