@@ -20,5 +20,5 @@ jobs:
       image: ghcr.io/hairyhenderson/gomplate-ci-build:latest
     steps:
       - uses: actions/checkout@v3
-      - run: go build .
-      - run: cd example; go build .
+      - run: go build -buildvcs=false .
+      - run: cd example; go build -buildvcs=false .
