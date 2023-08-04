@@ -36,7 +36,7 @@ func (Teapot) CaddyModule() caddy.ModuleInfo {
 type Teapot struct{}
 
 // UnmarshalCaddyfile - this is a no-op
-func (s *Teapot) UnmarshalCaddyfile(d *caddyfile.Dispenser) error {
+func (s *Teapot) UnmarshalCaddyfile(_ *caddyfile.Dispenser) error {
 	return nil
 }
 
@@ -51,7 +51,7 @@ func parseCaddyfile(h httpcaddyfile.Helper) (caddyhttp.MiddlewareHandler, error)
 	return t, nil
 }
 
-func (s Teapot) ServeHTTP(w http.ResponseWriter, r *http.Request, _ caddyhttp.Handler) error {
+func (s Teapot) ServeHTTP(w http.ResponseWriter, _ *http.Request, _ caddyhttp.Handler) error {
 	w.WriteHeader(http.StatusTeapot)
 	_, err := w.Write([]byte("I'm a teapot\r\n"))
 
