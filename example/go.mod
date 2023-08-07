@@ -3,7 +3,7 @@ module github.com/hairyhenderson/caddy-teapot-module/example
 go 1.20
 
 require (
-	github.com/caddyserver/caddy/v2 v2.7.2
+	github.com/caddyserver/caddy/v2 v2.7.3
 	github.com/hairyhenderson/caddy-teapot-module v0.0.3-0
 )
 
@@ -70,8 +70,8 @@ require (
 	github.com/prometheus/common v0.37.0 // indirect
 	github.com/prometheus/procfs v0.8.0 // indirect
 	github.com/quic-go/qpack v0.4.0 // indirect
-	github.com/quic-go/qtls-go1-20 v0.3.0 // indirect
-	github.com/quic-go/quic-go v0.37.1 // indirect
+	github.com/quic-go/qtls-go1-20 v0.3.1 // indirect
+	github.com/quic-go/quic-go v0.37.3 // indirect
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
 	github.com/shopspring/decimal v1.2.0 // indirect
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
