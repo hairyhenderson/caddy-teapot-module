@@ -3,8 +3,11 @@ on:
   push:
     branches: [ main ]
   pull_request:
-    # only run on PRs targeting main
     branches: [ main ]
+
+permissions:
+  contents: read
+  pull-requests: write
 
 jobs:
   lint:
