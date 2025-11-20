@@ -15,13 +15,13 @@ jobs:
     container:
       image: ghcr.io/hairyhenderson/gomplate-ci-build:latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - run: golangci-lint run --verbose --max-same-issues=0 --max-issues-per-linter=0
   build:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/hairyhenderson/gomplate-ci-build:latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - run: go build -buildvcs=false .
       - run: cd example; go build -buildvcs=false .
