@@ -1,6 +1,6 @@
 module github.com/hairyhenderson/caddy-teapot-module/example
 
-go 1.25.0
+go 1.27.3
 
 require (
 	github.com/caddyserver/caddy/v2 v2.11.2
