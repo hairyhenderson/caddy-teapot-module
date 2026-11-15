@@ -33,6 +33,11 @@
       "matchDepTypes": ["indirect"],
       "matchUpdateTypes": ["major"],
       "enabled": false
+    },
+    {
+      "description": "Own modules: no release-age wait, we publish these ourselves",
+      "matchPackageNames": ["github.com/hairyhenderson/**"],
+      "minimumReleaseAge": "0 days"
     }
   ]
 }
