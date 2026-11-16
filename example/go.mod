@@ -4,7 +4,7 @@ go 1.27.3
 
 require (
 	github.com/caddyserver/caddy/v2 v2.11.9
-	github.com/hairyhenderson/caddy-teapot-module v0.0.3-0
+	github.com/hairyhenderson/caddy-teapot-module v0.1.0
 )
 
 replace github.com/hairyhenderson/caddy-teapot-module => ../
