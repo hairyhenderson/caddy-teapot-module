@@ -13,14 +13,14 @@ jobs:
   lint:
     runs-on: ubuntu-26.04
     container:
-      image: ghcr.io/hairyhenderson/gomplate-ci-build:latest@sha256:83db7d8f04f25e838a01e9cbe6510fe3acd2bb39c51586e9e4bdac21b4a0caad
+      image: ghcr.io/hairyhenderson/gomplate-ci-build:latest@sha256:874811aa2bc439929c2c9ec85bb775b1002f7326a2ff66c668d41ab7ef24461e
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - run: golangci-lint run --verbose --max-same-issues=0 --max-issues-per-linter=0
   build:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/hairyhenderson/gomplate-ci-build:latest@sha256:83db7d8f04f25e838a01e9cbe6510fe3acd2bb39c51586e9e4bdac21b4a0caad
+      image: ghcr.io/hairyhenderson/gomplate-ci-build:latest@sha256:874811aa2bc439929c2c9ec85bb775b1002f7326a2ff66c668d41ab7ef24461e
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - run: go build -buildvcs=false .
